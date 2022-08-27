@@ -1,13 +1,12 @@
 const nodeFetch = require('node-fetch');
 
-let api = 'http://127.0.0.1:3000/api/signup';
+let api = 'http://127.0.0.1:3000/api';
 
 async function main() {
     let data = {
-        name: 'John Doe',
-        email: 'lol@lol.lol'
+        token: '',
     }
-    let response = await nodeFetch(api, {
+    let response = await nodeFetch(`${api}/signup`, {
         method: 'POST',
         body: JSON.stringify(data)
     });
